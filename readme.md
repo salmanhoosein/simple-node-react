@@ -5,9 +5,11 @@ Commands:
     cd/backend
     yarn
     yarn start
+        - localhost:8000
 
 1. frontend
 Commands: 
     cd/frontend
     yarn 
     yarn start
+        - localhost:3000
