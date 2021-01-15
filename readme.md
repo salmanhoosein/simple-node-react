@@ -2,14 +2,14 @@
 
 1. backend
 Commands: 
-    cd/backend
-    yarn
-    yarn start
+    1. cd/backend
+    2. yarn
+    3. yarn start
         - localhost:8000
 
 1. frontend
 Commands: 
-    cd/frontend
-    yarn 
-    yarn start
+    1. cd/frontend
+    2. yarn 
+    3. yarn start
         - localhost:3000
