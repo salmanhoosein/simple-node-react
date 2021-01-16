@@ -1,13 +1,12 @@
 {
-  "name": "backend",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "henry",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
