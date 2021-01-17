@@ -1,36 +1,43 @@
-import logo from "./logo.svg";
-import "./App.css";
-import axios from "axios";
+import React from "react";
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { createStyles, makeStyles } from "@material-ui/core";
+import Routes from "./Routes";
 
+const history = createBrowserHistory();
+const useStyles = makeStyles(() =>
+  createStyles({
+    "@global": {
+      "*": {
+        boxSizing: "border-box",
+        margin: 0,
+        padding: 0,
+      },
+      html: {
+        "-webkit-font-smoothing": "antialiased",
+        "-moz-osx-font-smoothing": "grayscale",
+        height: "100%",
+        width: "100%",
+      },
+      body: {
+        height: "100%",
+        width: "100%",
+      },
+      "#root": {
+        height: "100%",
+        width: "100%",
+      },
+    },
+  })
+);
 
 function App() {
+  useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>hello world</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <button
-          onClick={() => {
-            axios
-              .get("http://localhost:8000/test")
-              .then((res) => {
-                console.log(res);
-              })
-              .catch((err) => console.log(err));
-          }}
-        >
-          CHECK BACKEND
-        </button>
-      </header>
-    </div>
+    <Router history={history}>
+      <Routes />
+    </Router>
   );
 }
 

@@ -19,12 +19,24 @@ exports.postTestData = async (req, res, next) => {
   try {
     let response = null;
 
+    /* 
+
+      @TODO: construct cli argument in each form frontend and
+      pass to backend
+
+      const [arg1, setArg1] = React.useState();
+      const [arg2, setArg2] = React.useState();
+      const [exe, setExe] = React.useState('matrixmult')
+
+      const cliArg  = exe + arg1 + arg2;
+      "num_rows=1;num_columns=1;name=TEST"
+    */
     /*  
       execute c++ executable
-      pass in number 99,33 and dataset name as arguments
+      run binary file ./testsys pass in choice=11 as argument
     */
     exec(
-      `${path.join(__dirname, "..", "c++", "hello")} 99 33 dataset=test.csv
+      `${path.join(__dirname, "..", "c++", "testsys")} "choice=11"
       `,
       (error, stdout, stderr) => {
         if (error) {
